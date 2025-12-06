@@ -1,0 +1,19 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Logs
+*.log
+
+# VS Code settings
+.vscode/
+
+# Folder with private or messy experiments
+Private_Projects/
+
+# Environment files (if you create one later)
+.env
+venv/
