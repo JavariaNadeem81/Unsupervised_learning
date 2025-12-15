@@ -1,0 +1,129 @@
+# Unsupervised Fraud Detection using Isolation Forest
+
+## 📌 Project Overview
+
+This project focuses on detecting fraudulent financial transactions using **unsupervised machine learning**. Instead of relying on labeled data during training, the model learns the *normal behavior* of transactions and flags deviations as potential fraud.
+
+The core algorithm used is **Isolation Forest**, an industry-standard technique for anomaly detection, particularly effective for large, highly imbalanced datasets like financial fraud.
+
+---
+
+## 🎯 Business Objective
+
+Financial fraud is rare, unpredictable, and costly. Traditional supervised models require large amounts of labeled fraud data, which is often unavailable or delayed.
+
+**Goal:**
+
+* Identify suspicious (anomalous) transactions
+* Minimize false negatives (missed fraud)
+* Scale efficiently to millions of records
+
+---
+
+## 📂 Dataset Summary
+
+The dataset contains **6.3+ million transactions** with the following characteristics:
+
+* Transaction step (time-based)
+* Transaction type
+* Transaction amount
+* Sender and receiver balances (before & after)
+* Fraud indicators (`isFraud`, `isFlaggedFraud` — used only for evaluation)
+
+> Identifier-like columns (e.g., account IDs) were excluded to avoid noise.
+
+---
+
+## 🧠 Modeling Approach
+
+### Why Isolation Forest?
+
+* Designed specifically for **anomaly detection**
+* Handles **large-scale** and **high-dimensional** data efficiently
+* Does not assume any data distribution
+* Ideal for **rare event detection** like fraud
+
+### Key Steps:
+
+1. Drop high-cardinality identifier columns
+2. Encode categorical features
+3. Scale numerical features
+4. Train Isolation Forest model
+5. Generate anomaly scores and predictions
+6. Evaluate using available fraud labels
+
+---
+
+## ⚙️ Tech Stack
+
+* Python
+* Pandas, NumPy
+* Scikit-learn
+* Matplotlib, Seaborn
+* Git & GitHub
+
+---
+
+## 📊 Evaluation Metrics
+
+Although the model is unsupervised, available labels were used **only for evaluation**:
+
+* Confusion Matrix
+* Precision / Recall / F1-score
+* ROC-AUC using anomaly scores
+
+This provides a realistic view of how well anomalies align with actual fraud cases.
+
+---
+
+## 📈 Visual Insights
+
+* Fraud vs non-fraud distribution
+* Transaction amount patterns
+* Balance behavior before vs after transactions
+* PCA-based visualization of anomalies
+
+These visuals help interpret model behavior and validate results.
+
+---
+
+## 🚀 Key Outcomes
+
+* Successfully identified anomalous transactions
+* Clear separation between normal and suspicious behavior
+* Scalable pipeline suitable for real-world deployment
+
+---
+
+## 🔮 Future Improvements
+
+* Feature engineering (ratio features, rolling statistics)
+* Compare with LOF and Autoencoders
+* Threshold tuning based on business risk
+* Deploy as a real-time scoring service
+
+---
+
+## 🧾 How to Run
+
+```bash
+# clone repository
+git clone <repo-url>
+
+# install dependencies
+pip install -r requirements.txt
+
+# run notebook / script
+jupyter notebook
+```
+
+---
+
+## ✍️ Author
+
+**Javaria Nadeem**
+Machine Learning | Data Science | Python
+
+---
+
+> *This project demonstrates practical, production-oriented thinking applied to unsupervised machine learning for fraud detection.*
